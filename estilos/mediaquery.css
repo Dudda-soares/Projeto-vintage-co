@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 625px  )  {
+   
+    .container{
+        max-width: 90%;
+    }
+    header div.container{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+   
+    #sobre-a-loja img {
+        max-width: 50%; 
+        height: auto;
+    }
+   
+    .conteudo-sobre {
+        display: flex;
+        align-items: center;
+    }
+    .sobre {
+        margin-left: 20px;
+    }
+    #sobre-a-loja h2 {
+        text-align: start;
+    }
+
+    section {
+       
+        flex-wrap: wrap; /* Permite quebrar linha se necessário */
+    }
+
+    section > * {
+        flex: 1 1 calc(100% - 20px); /* Cada item ocupa 50% da largura */
+        margin: 10px; /* Espaço entre os itens */
+    }
+    
+    .lista-veiculo {
+        grid-template-columns: repeat(2, 1fr); /* 2 colunas para telas médias */
+    }
+    
+    }
+
+    /* Media Queries */
+    @media screen and (min-width: 626px) and (max-width: 1023px) {
+    body {
+        font-size: 1rem;
+     }
+     header div.container h1{
+        margin: auto;
+        font-size: 3rem; /* Ajustado para telas maiores */
+        letter-spacing: 0.3em;
+    }
+     .container > ul > li{
+        margin-left: 4px;
+        
+     }
+    .container > ul{
+        display: flex;
+    }
+    .container > ul > li > a{
+        border-radius: 10px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    .container > ul > li > a:hover{
+        transform: scale(1.1);
+    }
+    
+    .container {
+        max-width: 960px;
+    }
+   
+    .container  h1{
+        font-size: 3rem;
+        letter-spacing: 0.8em;
+    }
+    .conteudo-sobre {
+        display: block; /* Utiliza flexbox para alinhar a imagem e o texto */
+        align-items: stretch; /* Garante que ambos ocupem a mesma altura */
+        gap: 20px; /* Espaçamento entre a imagem e o texto */
+    }
+    #sobre-a-loja img {
+        max-width: 100%; 
+        height: auto;
+        margin-bottom: 5%;
+    }
+    .conteudo-sobre img {
+        display: block;
+        width: 100%; /* Ajusta a imagem para ocupar toda a largura do container */
+        height: auto; /* Mantém a proporção da imagem */
+        max-width: 100%; /* Define uma largura máxima para a imagem */
+        object-fit: contain; /* Cobre o espaço disponível sem distorcer */
+    }
+  
+    .lista-veiculo {
+        flex-direction: row;
+    }
+
+    section > * {
+        flex: none;
+    }
+    #destaque ul, #promocao ul{
+        display: grid;
+    }
+
+    }
+
+    
+    /* Adicionando Media Query para Laptops e Desktops Maiores */
+    @media screen and (min-width: 1024px) {
+    body {
+        font-size: 1rem;
+    }
+    header div.container h1{
+        margin: auto;
+        font-size: 4rem; /* Ajustado para telas maiores */
+        letter-spacing: 0.4em;
+    }
+    .container  ul  {
+        display: ruby;   
+    }
+    .container > ul > li > a{
+        border-radius: 10px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    .container > ul > li > a:hover{
+        transform: scale(1.1);
+    }
+    
+    .container {
+       
+        max-width: 960px;
+    }
+    .lista-veiculo {
+        flex-direction: row;
+    }
+
+    section > * {
+        flex: none;
+    }
+    #destaque p, #promocao p{
+        min-height: 70px; 
+        height: 100%;
+     }
+    #destaque ul, #promocao ul{
+        display: grid;
+    }
+    .lista-veiculo {
+        grid-template-columns: repeat(4, 1fr); /* 2 colunas para telas médias */
+    }
+    
+}
+    @media screen and (min-width:1273px){
+      main{    
+        max-width: 70%;
+    }  
+    #destaque p, #promocao p{
+        min-height: 70px; 
+        height: 100%;
+     }
+    }

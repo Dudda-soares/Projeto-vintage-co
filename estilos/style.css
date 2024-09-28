@@ -1,0 +1,282 @@
+@charset "UTF-8";
+
+/*Layout Desktop (a partir de 1024px): 
+Layout Tablet (de 641px até 1023px):
+Layout Mobile (até 640px):
+*/
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html{
+    overflow-x: hidden;
+    
+}
+
+:root{
+    --cor0: #D6C1E2;
+    --cor1:#6F2C3E;
+    --cor2:#E2725B;
+    --cor3:#d9cce0fd;
+    --cor4:#FFFFFF;
+    --cor5:#D1D5D8;
+    --cor6:#ad86af3a;
+    --cor7:#80008042;
+    --cor8:#b04cd8;
+
+    
+}
+body {
+    
+    margin: 0; /* Remove margens do body */
+    height: 100%; /* Para garantir que o body preencha a tela */
+    position: relative;
+    
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../img/meiorosa.jpg') ; /* Imagem de fundo */
+    background-size: cover;
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Impede repetição da imagem */
+    opacity: 0.6; /* Opacidade da imagem de fundo */
+    z-index: -1; /* Coloca a imagem atrás do conteúdo */
+}
+
+/* Estilização dos outros elementos */
+.body {
+    position: relative; /* Para garantir que a seção não seja afetada pelo pseudo-elemento */
+    z-index: 1; /* Certifica que os elementos dentro da seção ficam acima da imagem de fundo */
+}
+header, footer{
+    background-color: var(--cor0);
+    padding: 16px;
+    border-radius:  0 0 20px 20px;; 
+    box-shadow: 0px 0px 8px rgba(99, 1, 86, 0.397); /* Adiciona sombra para um efeito de destaque */
+}
+
+main{
+
+    max-width: 90%;
+    width: 90vw;
+    background-color: var(--cor3);
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    padding: 20px;
+    border-radius: 10px; 
+    box-shadow: 0px 0px 8px rgba(99, 1, 86, 0.397); /* Adiciona sombra para um efeito de destaque */
+
+}
+.container{ 
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container  h1{
+    padding: 10px;
+    margin: auto;
+    font-size: 2.25rem;
+    font-family: "Spicy Rice", serif;
+    color:var(--cor8);
+    font-weight: normal;
+    text-shadow: 3px 3px 2px #ffffffd3; /* Sombra no texto */   
+    
+}
+nav li{
+    list-style: none;
+    display: inline;
+    font-size: 18px;
+    font-weight: bold;
+    
+}
+nav > ul{
+    list-style-type: none;
+}
+.container > ul> li > a {
+   display: block;
+   text-decoration: none;
+   color:var(--cor4);
+   padding: 10px;
+   text-align: center;
+   background-color: var(--cor7);
+   
+}
+.menu-hamburguer h4{
+    display: none;
+}
+.menu-hamburguer{
+    width: 32px;
+    margin-right: 45px;
+}
+.menu-hamburguer span{
+    height: 2px;
+    width: 100%;
+    display: block ;
+    margin-bottom: 4px;
+    cursor: pointer;
+    background-color: white;
+    margin-left: 16px;
+}
+header > .container{
+    display: flex;
+    flex-wrap: wrap;
+}
+header > .container,
+footer > .container{
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+}
+header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.container-flex{
+    display: flex;
+    justify-content: center; /* Alinha horizontalmente os itens */
+    align-items: flex-start; /* Alinha verticalmente os itens ao topo */
+}
+
+#sobre-a-loja {
+    padding: 20px 0; /* Adiciona um pouco de espaço na seção */
+}
+
+#sobre-a-loja img {
+    max-width: 100%; /* Faz a imagem ser responsiva */
+    height: auto; /* Mantém a proporção */
+    display: block; /* Garante que a imagem seja um bloco */
+    margin: 0 auto; /* Centraliza a imagem */
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.205); /* Adiciona sombra para um efeito de destaque */
+    border-radius: 8px; /* Borda arredondada */
+
+}
+
+#sobre-a-loja h2 {
+    margin-top: 10px; /* Espaçamento acima do título */
+    text-align: center; /* Centraliza o título */
+}
+
+section {
+    padding: 48px 0;
+    display: flex;
+    flex-direction: column; /* Para telas pequenas, empilhado */
+    max-width: 1200px; /* Aumente a largura máxima das seções */
+    margin: 0 auto; /* Centraliza a seção */
+}
+
+section h2 {
+    margin-bottom: 16px;
+    font-family: "Playfair Display", serif;
+}
+
+section p {
+    font-family: "Roboto", sans-serif;
+}
+#destaque p, #promocao p{
+   min-height: 70px; 
+   height: 100%;
+}
+
+/* Lista de veículos (Grid) */
+.lista-veiculo {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* 1 coluna para telas pequenas */
+    gap: 20px; /* Espaçamento entre os itens */
+}
+
+.lista-veiculo li{
+    list-style: none;
+    max-width:100%;
+    margin-bottom: 24px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.438); /* Adiciona sombra para um efeito de destaque */
+    border-radius: 8px; /* Borda arredondada */
+    padding: 10px; /* Espaçamento interno em cada item */
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.lista-veiculo li:hover{
+    transform: scale(1.04);
+}
+.lista-veiculo li img{
+    max-width: 100%;
+    
+}
+.lista-veiculo li h3{
+    margin: 16px 0;
+    color: var(--cor1);
+}
+
+.item-central{
+    margin: 0 1%;
+}
+button{
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    border: none;
+    background-color:var(--cor2);
+    color: var(--cor4);
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+    cursor: pointer;
+    border-radius: 8px;
+}
+.price{
+    display: block;
+    margin: 16px 0;
+}
+.price del{
+    color: aliceblue;
+    font-size: 14px;
+}
+#contato form{
+    border: 1px solid rgba(0, 0, 0, 0.342);
+    border-radius: 10px;
+    padding: 35px;
+}
+.form-campo{
+    margin-bottom: 16px;
+}
+.form-campo label{
+    font-weight: bold;
+    display: block;
+}
+.form-campo input,
+.form-campo textarea{
+    width:100% ;
+    display: block;
+    padding: 8px;
+}
+.form-campo textarea{
+    resize: none;
+    height: 120px;
+}
+form{
+    max-width: 360px;
+}
+form button{
+    max-width: 120px;
+}
+footer li{
+    list-style: none;
+    margin-left: 16px;
+}
+.container-flex  a{
+    background-color: rgb(101, 13, 216);
+}
+footer li img{
+height: 32px;
+}
